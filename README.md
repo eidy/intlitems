@@ -1,6 +1,6 @@
 Translate Item Texts
 --------------------
-This mod acts as a fast way of overriding the item texts of ALL mods in a game (including defaults) in one place.
+This mod acts as a fast way of overriding the item texts of ALL mods in a minetest game (including defaults) in one place.
 
 Need to get your game translated to another language in a hurry?
 
