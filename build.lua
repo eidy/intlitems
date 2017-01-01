@@ -15,13 +15,20 @@ if file ~= nil then
 end
 
 minetest.register_chatcommand("writeintlitems", {
-	params = "no params", 
+	params = "tab or nil", 
     description = "Writes the international items template intlitems/locale/template.txt", 
     func = function(name, param)
-            
-        local file = io.open(filename,"w")
+        local outfilename = filename
+        if param == "tab" then
+            outfilename = outfilename .. ".tab"
+        end    
+        local file = io.open(outfilename,"w")
         for k,v in pairs(intlitems.wt) do
-            file:write(k, " = " , v , "\n")
+            if param == "tab" then
+                file:write(k, "\t" , v , "\n")
+            else
+                file:write(k, " = " , v , "\n")
+            end
         end
         file:close()
         return true, "Done! Wrote " .. #intlitems.wt .. " records."

@@ -26,11 +26,11 @@ local function gettext(originaltext)
         return ""
     end
     if writetemplate then 
-        if intlitems.wt[originaltext] == nil then
+        if intlitems.wt[originaltext] == nil and originaltext:len() > 3 then
             intlitems.wt[originaltext] = ""
         end 
     end
-    return S(description)
+    return S(originaltext)
 end
 
 
